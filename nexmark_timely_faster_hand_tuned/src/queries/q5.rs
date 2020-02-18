@@ -21,7 +21,7 @@ pub fn q5<S: Scope<Timestamp = usize>>(
     let additions_directory = TempDir::new_in(".").unwrap().into_path();
     let additions = FasterKv::new_auctions_store(
         1 << 24,
-        2 * 1024 * 1024 * 1024,
+        6 * 1024 * 1024 * 1024,
         additions_directory.to_str().unwrap().to_string(),
     )
     .unwrap();
@@ -30,7 +30,7 @@ pub fn q5<S: Scope<Timestamp = usize>>(
     let deletions_directory = TempDir::new_in(".").unwrap().into_path();
     let deletions = FasterKv::new_auctions_store(
         1 << 24,
-        2 * 1024 * 1024 * 1024,
+        1 * 1024 * 1024 * 1024,
         deletions_directory.to_str().unwrap().to_string(),
     )
     .unwrap();
@@ -38,7 +38,7 @@ pub fn q5<S: Scope<Timestamp = usize>>(
     let accumulations_directory = TempDir::new_in(".").unwrap().into_path();
     let accumulations = FasterKv::new_u64_store(
         1 << 24,
-        2 * 1024 * 1024 * 1024,
+        512 * 1024 * 1024,
         accumulations_directory.to_str().unwrap().to_string(),
     )
     .unwrap();
@@ -46,7 +46,7 @@ pub fn q5<S: Scope<Timestamp = usize>>(
     let hot_items_directory = TempDir::new_in(".").unwrap().into_path();
     let hot_items = FasterKv::new_u64_pair_store(
         1 << 24,
-        2 * 1024 * 1024 * 1024,
+        512 * 1024 * 1024,
         hot_items_directory.to_str().unwrap().to_string(),
     )
     .unwrap();
