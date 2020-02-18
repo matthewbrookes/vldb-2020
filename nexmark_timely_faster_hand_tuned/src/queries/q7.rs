@@ -29,7 +29,7 @@ pub fn q7<S: Scope<Timestamp = usize>>(
             let state_directory = TempDir::new_in(".").unwrap().into_path();
             let state = FasterKv::new_u64_store(
                 1 << 24,
-                2 * 1024 * 1024 * 1024,
+                6 * 1024 * 1024 * 1024,
                 state_directory.to_str().unwrap().to_string(),
             )
             .unwrap();
