@@ -16,7 +16,7 @@ pub fn q4<S: Scope<Timestamp = usize>>(
     // Stores category -> (total, count)
     let aggs = FasterKv::new_u64_pair_store(
         1 << 24,
-        2 * 1024 * 1024 * 1024,
+        512 * 1024 * 1024,
         aggs_directory.to_str().unwrap().to_string(),
     )
     .unwrap();
